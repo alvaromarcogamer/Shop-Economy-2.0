@@ -1,0 +1,18 @@
+name: Misiones
+version: 1.2.1
+main: es.misiones.MisionesPlugin
+api-version: '1.20'
+softdepend: [Vault, ShopEconomy]
+description: Misiones con recompensas. Usa la economia de Vault para dar dinero
+commands:
+  misiones:
+    description: Abre el menu de misiones o administra el plugin
+    usage: /misiones [reload|reset]
+    aliases: [mision, quests, quest]
+permissions:
+  misiones.use:
+    description: Permite usar las misiones
+    default: true
+  misiones.admin:
+    description: Permite administrar las misiones
+    default: op

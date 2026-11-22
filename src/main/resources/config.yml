@@ -1,0 +1,10 @@
+# ================= MISIONES =================
+# Cuantas misiones puede tener activas un jugador a la vez
+max-active-quests: 3
+
+# Si es true, el progreso no cuenta cuando el jugador esta en modo creativo o espectador
+ignore-creative: true
+
+# Si es true, los bloques colocados por jugadores no cuentan al romperlos
+# (evita colocar y romper el mismo bloque una y otra vez para completar misiones)
+anti-exploit: true

@@ -1,0 +1,190 @@
+# ==============================================================
+#  MISIONES
+#  Despues de editar este archivo usa  /misiones reload
+#
+#  TIPOS DE MISION
+#    KILL_MOB     matar criaturas        (target = tipo de entidad, ej. ZOMBIE)
+#    BREAK_BLOCK  romper bloques         (target = material, ej. DIAMOND_ORE)
+#    PLACE_BLOCK  colocar bloques        (target = material)
+#    FISH         pescar                 (no necesita target)
+#    EAT          comer o beber          (target = material, ej. BREAD o ANY)
+#    BREED        criar animales         (target = animal, ej. COW o ANY)
+#
+#  CAMPOS
+#    name             nombre que se ve en el menu (admite colores con &)
+#    description      lista de lineas de descripcion
+#    type             uno de los tipos de arriba
+#    target           ANY (cualquiera), un valor, o una lista de valores
+#    amount           cuantas veces hay que hacerlo
+#    icon             material del icono en el menu
+#    repeatable       true = se puede volver a hacer al completarla
+#    reward-text      texto de recompensa que se muestra al jugador
+#    reward-money     dinero que recibe (necesita Vault y un plugin de economia, ej. ShopEconomy)
+#    reward-commands  (opcional) comandos que ejecuta la consola. %player% = nombre del jugador
+#    reward-items     objetos que recibe, formato MATERIAL:cantidad
+# ==============================================================
+quests:
+  cazador_zombis:
+    name: "&cCazador de zombis"
+    description:
+      - "&7Elimina a 20 zombis."
+    type: KILL_MOB
+    target: ZOMBIE
+    amount: 20
+    icon: ROTTEN_FLESH
+    repeatable: false
+    reward-text: "&e200 monedas"
+    reward-money: 200
+
+  huesos_y_flechas:
+    name: "&fHuesos y flechas"
+    description:
+      - "&7Elimina a 15 esqueletos."
+    type: KILL_MOB
+    target: SKELETON
+    amount: 15
+    icon: BONE
+    repeatable: false
+    reward-text: "&e250 monedas"
+    reward-money: 250
+
+  caza_creepers:
+    name: "&aCaza de creepers"
+    description:
+      - "&7Elimina a 10 creepers."
+      - "&8Mejor de lejos."
+    type: KILL_MOB
+    target: CREEPER
+    amount: 10
+    icon: GUNPOWDER
+    repeatable: false
+    reward-text: "&e300 monedas"
+    reward-money: 300
+
+  minero_de_carbon:
+    name: "&8Minero de carbon"
+    description:
+      - "&7Pica 32 bloques de mena de carbon."
+    type: BREAK_BLOCK
+    target:
+      - COAL_ORE
+      - DEEPSLATE_COAL_ORE
+    amount: 32
+    icon: COAL
+    repeatable: false
+    reward-text: "&e150 monedas"
+    reward-money: 150
+
+  buscador_de_diamantes:
+    name: "&bBuscador de diamantes"
+    description:
+      - "&7Consigue 5 menas de diamante."
+    type: BREAK_BLOCK
+    target:
+      - DIAMOND_ORE
+      - DEEPSLATE_DIAMOND_ORE
+    amount: 5
+    icon: DIAMOND_PICKAXE
+    repeatable: false
+    reward-text: "&e1000 monedas y 2 diamantes"
+    reward-money: 1000
+    reward-items:
+      - "DIAMOND:2"
+
+  lenador:
+    name: "&6Lenador"
+    description:
+      - "&7Tala 64 troncos de cualquier arbol."
+    type: BREAK_BLOCK
+    target:
+      - OAK_LOG
+      - BIRCH_LOG
+      - SPRUCE_LOG
+      - JUNGLE_LOG
+      - ACACIA_LOG
+      - DARK_OAK_LOG
+      - MANGROVE_LOG
+      - CHERRY_LOG
+    amount: 64
+    icon: IRON_AXE
+    repeatable: true
+    reward-text: "&e150 monedas y 8 panes"
+    reward-money: 150
+    reward-items:
+      - "BREAD:8"
+
+  granjero:
+    name: "&2Granjero"
+    description:
+      - "&7Cosecha 40 cultivos de trigo,"
+      - "&7zanahoria o patata."
+    type: BREAK_BLOCK
+    target:
+      - WHEAT
+      - CARROTS
+      - POTATOES
+    amount: 40
+    icon: WHEAT
+    repeatable: true
+    reward-text: "&e120 monedas"
+    reward-money: 120
+
+  pescador:
+    name: "&9Pescador"
+    description:
+      - "&7Pesca 10 veces."
+    type: FISH
+    target: ANY
+    amount: 10
+    icon: FISHING_ROD
+    repeatable: true
+    reward-text: "&e100 monedas"
+    reward-money: 100
+
+  constructor:
+    name: "&eConstructor"
+    description:
+      - "&7Coloca 200 bloques de cualquier tipo."
+    type: PLACE_BLOCK
+    target: ANY
+    amount: 200
+    icon: BRICKS
+    repeatable: true
+    reward-text: "&e100 monedas"
+    reward-money: 100
+
+  exterminador:
+    name: "&4Exterminador"
+    description:
+      - "&7Elimina a 50 criaturas de cualquier tipo."
+    type: KILL_MOB
+    target: ANY
+    amount: 50
+    icon: IRON_SWORD
+    repeatable: true
+    reward-text: "&e400 monedas"
+    reward-money: 400
+
+  gloton:
+    name: "&dGloton"
+    description:
+      - "&7Come o bebe 30 veces."
+    type: EAT
+    target: ANY
+    amount: 30
+    icon: COOKED_BEEF
+    repeatable: true
+    reward-text: "&e100 monedas"
+    reward-money: 100
+
+  criador:
+    name: "&6Criador"
+    description:
+      - "&7Cria 10 animales."
+    type: BREED
+    target: ANY
+    amount: 10
+    icon: WHEAT_SEEDS
+    repeatable: true
+    reward-text: "&e150 monedas"
+    reward-money: 150
